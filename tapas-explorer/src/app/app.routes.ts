@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { TapasListComponent } from './tapas-list/tapas-list.component';
-import { TapasDetailComponent } from './tapas-detail/tapas-detail.component';
-import { TapasEditorComponent } from './tapas-editor/tapas-editor.component';
+import { TapasListComponent } from './components/tapas-list/tapas-list.component';
+import { TapasDetailComponent } from './components/tapas-detail/tapas-detail.component';
+import { TapasEditorComponent } from './components/tapas-editor/tapas-editor.component';
 import { OverviewComponent } from './overview/overview.component';
 
 export const APP_ROUTES: Routes = [
