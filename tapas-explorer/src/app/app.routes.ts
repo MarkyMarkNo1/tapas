@@ -10,6 +10,7 @@ export const APP_ROUTES: Routes = [
     path: '',
     component: OverviewComponent,
     children: [
+      { path: '', component: TapasListComponent }, // , pathMatch: 'full'
       { path: 'tapa/new', component: TapasCreatorComponent },
       { path: 'tapa/:id', component: TapasDetailComponent },
       { path: 'tapa/:id/edit', component: TapasEditorComponent }
