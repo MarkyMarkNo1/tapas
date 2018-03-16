@@ -12,6 +12,10 @@ import { OverviewComponent } from './overview/overview.component';
 import { TapasMaterialsModule } from './tapas-material.module';
 import { TapasCreatorComponent } from './components/tapas-creator/tapas-creator.component';
 import { ControlsComponent } from './components/controls/controls.component';
+import { MapOverviewComponent } from './components/map-overview/map-overview.component';
+import { SurpriseMeComponent } from './components/surprise-me/surprise-me.component';
+import { HomeComponent } from './components/home/home.component';
+import { SearchTapasComponent } from './components/search-tapas/search-tapas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ControlsComponent } from './components/controls/controls.component';
     TapasEditorComponent,
     OverviewComponent,
     TapasCreatorComponent,
-    ControlsComponent
+    ControlsComponent,
+    MapOverviewComponent,
+    SurpriseMeComponent,
+    HomeComponent,
+    SearchTapasComponent
   ],
   imports: [
     TapasMaterialsModule,

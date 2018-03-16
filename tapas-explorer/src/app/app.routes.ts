@@ -4,18 +4,26 @@ import { TapasDetailComponent } from './components/tapas-detail/tapas-detail.com
 import { TapasEditorComponent } from './components/tapas-editor/tapas-editor.component';
 import { OverviewComponent } from './overview/overview.component';
 import { TapasCreatorComponent } from './components/tapas-creator/tapas-creator.component';
+import { MapOverviewComponent } from './components/map-overview/map-overview.component';
+import { SurpriseMeComponent } from './components/surprise-me/surprise-me.component';
+import { HomeComponent } from './components/home/home.component';
+import { SearchTapasComponent } from './components/search-tapas/search-tapas.component';
 
 export const APP_ROUTES: Routes = [
   {
     path: '',
     component: OverviewComponent,
     children: [
-      { path: '', component: TapasListComponent }, // , pathMatch: 'full'
+      { path: '', component: HomeComponent }, // , pathMatch: 'full'
       { path: 'tapa/new', component: TapasCreatorComponent },
-      { path: 'tapa/:id', component: TapasDetailComponent },
-      { path: 'tapa/:id/edit', component: TapasEditorComponent }
+      { path: 'tapa/list', component: TapasListComponent },
+      { path: 'tapa/find', component: SearchTapasComponent },
+      { path: 'tapa/map', component: MapOverviewComponent },
+      { path: 'tapa/surpriseme', component: SurpriseMeComponent },
     ]
   },
+  { path: 'tapa/:id', component: TapasDetailComponent },
+  { path: 'tapa/:id/edit', component: TapasEditorComponent },
   // We have to put this route above the tapa detail route
   // so it's matched before `tapa/:id`, which `contact/new`
   // would be.
