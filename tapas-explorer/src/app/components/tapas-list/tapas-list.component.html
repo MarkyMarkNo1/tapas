@@ -1,3 +1,6 @@
-<p>
-  tapas-list works!
-</p>
+<mat-list>
+  <mat-list-item *ngFor="let tapa of tapas$ | async">
+    <h3 mat-line> {{ tapa.name }} </h3>
+    <!-- <img mat-list-avatar [src]="tapa?.ca" alt="Picture of {{tapa?.name}}" class="circle"> -->
+  </mat-list-item>
+</mat-list>
