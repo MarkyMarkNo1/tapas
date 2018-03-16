@@ -1,33 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TapasService } from './services/tapas.service';
-
-import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
-
-import { MaterialModule } from './material.module';
-
-import { TapasListComponent } from './tapas-list/tapas-list.component';
+import { TapasService } from './services/tapas.service';
 import { TapasDetailComponent } from './tapas-detail/tapas-detail.component';
 import { TapasEditorComponent } from './tapas-editor/tapas-editor.component';
-
+import { TapasListComponent } from './tapas-list/tapas-list.component';
+import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TapasListComponent,
     TapasDetailComponent,
-    TapasEditorComponent
+    TapasEditorComponent,
+    OverviewComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(APP_ROUTES)
-  ],
-  providers: [
-    TapasService
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(APP_ROUTES)],
+  providers: [TapasService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
