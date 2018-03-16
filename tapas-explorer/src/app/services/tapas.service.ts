@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Tapa } from '../../model/tapas';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+
 import { TAPAS_DATA } from '../../data/tapas-data';
+import { Tapa } from '../../model/tapas';
 
 interface TapasResponse {
   item: Tapa;
@@ -14,19 +17,20 @@ interface TapasResponse {
 export class TapasService {
   constructor() {}
 
-  getTapas() {
-    return TAPAS_DATA;
+  getTapas(): Observable<Array<Tapa>> {
+    return of(TAPAS_DATA);
   }
 
-  getTapasByID(id: number) {
-    return TAPAS_DATA[id];
+  getTapasByID(id: number): Observable<Tapa> {
+    return of(TAPAS_DATA[id]);
   }
 
   // getTapasByFilter(filterObject: any){
 
   // }
 
-  saveTapas(tapa: Tapa) {
+  saveTapas(tapa: Tapa): Observable<Tapa> {
     TAPAS_DATA.push(tapa);
+    return of(tapa);
   }
 }

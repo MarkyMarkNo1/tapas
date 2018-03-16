@@ -4,7 +4,7 @@ export interface Tapa {
   category?: string;
   pictureUrl?: string;
   price?: number;
-  ingredients?: [string];
+  ingredients?: string[];
   rating?: number;
   location?: Location;
 }

@@ -1,4 +1,6 @@
-export const TAPAS_DATA = [
+import { Tapa } from '../model/tapas';
+
+export const TAPAS_DATA: Array<Tapa> = [
   {
     id: 0,
     name: 'Patatas Bravas',
@@ -10,6 +12,14 @@ export const TAPAS_DATA = [
     rating: 3
   },
   {
-    id: 1
+    id: 1,
+    name: 'Las Palmas Sausage',
+    category: 'Meat',
+    pictureUrl:
+     'https://i0.wp.com/www.recetum.com/wp-content/uploads/2014/01/Pinchos-de-morcilla-y-pimientos.png?resize=671%2C503',
+    price: 2.50,
+    ingredients: ['sausage' , 'peppers'],
+    rating: 4
   }
 ];
+
