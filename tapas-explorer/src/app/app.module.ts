@@ -11,6 +11,7 @@ import { TapasListComponent } from './components/tapas-list/tapas-list.component
 import { OverviewComponent } from './overview/overview.component';
 import { TapasMaterialsModule } from './tapas-material.module';
 import { TapasCreatorComponent } from './components/tapas-creator/tapas-creator.component';
+import { ControlsComponent } from './components/controls/controls.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TapasCreatorComponent } from './components/tapas-creator/tapas-creator.
     TapasDetailComponent,
     TapasEditorComponent,
     OverviewComponent,
-    TapasCreatorComponent
+    TapasCreatorComponent,
+    ControlsComponent
   ],
   imports: [
     TapasMaterialsModule,

@@ -6,15 +6,20 @@ import { OverviewComponent } from './overview/overview.component';
 import { TapasCreatorComponent } from './components/tapas-creator/tapas-creator.component';
 
 export const APP_ROUTES: Routes = [
-  { path: '', component: OverviewComponent },
+  {
+    path: '',
+    component: OverviewComponent,
+    children: [
+      { path: 'tapa/new', component: TapasCreatorComponent },
+      { path: 'tapa/:id', component: TapasDetailComponent },
+      { path: 'tapa/:id/edit', component: TapasEditorComponent }
+    ]
+  },
   // We have to put this route above the tapa detail route
   // so it's matched before `tapa/:id`, which `contact/new`
   // would be.
-  { path: 'tapa/new', component: TapasCreatorComponent },
-  { path: 'tapa/:id', component: TapasDetailComponent },
-  { path: 'tapa/:id/edit', component: TapasEditorComponent },
+
   // Wildcard route serves as fallback route and has to be
   // the last defined route in this list.
   { path: '**', redirectTo: '/' }
 ];
-
