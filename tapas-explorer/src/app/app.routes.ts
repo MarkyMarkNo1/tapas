@@ -18,8 +18,8 @@ export const APP_ROUTES: Routes = [
       { path: 'tapa/new', component: TapasCreatorComponent },
       { path: 'tapa/list', component: TapasListComponent },
       { path: 'tapa/find', component: SearchTapasComponent },
-      { path: 'tapa/map', component: MapOverviewComponent },
-      { path: 'tapa/surpriseme', component: SurpriseMeComponent },
+      { path: 'map', component: MapOverviewComponent },
+      { path: 'surpriseme', component: SurpriseMeComponent },
     ]
   },
   { path: 'tapa/:id', component: TapasDetailComponent },
