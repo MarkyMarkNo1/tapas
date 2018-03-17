@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchTapasComponent } from './components/search-tapas/search-tapas.component';
 
 import { LeafletModule } from '@asymmetrik/angular2-leaflet';
+import { FormsModule, FormBuilder } from '@angular/forms';
 
 
 @NgModule({
@@ -36,10 +37,11 @@ import { LeafletModule } from '@asymmetrik/angular2-leaflet';
   ],
   imports: [
     TapasMaterialsModule,
+    FormsModule,
     LeafletModule.forRoot(),
     BrowserModule, RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [TapasService],
+  providers: [TapasService, FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
