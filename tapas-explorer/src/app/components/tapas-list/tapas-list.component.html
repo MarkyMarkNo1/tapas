@@ -1,11 +1,11 @@
 <mat-grid-list cols="4" rowHeight="2:1">
   <!-- <mat-list> -->
-  <mat-grid-list *ngFor="let tapa of tapas$ | async" [routerLink]="['/tapa', tapa.id]">
-    <mat-card *ngFor="let tapa of tapas$ | async" [routerLink]="['/tapa', tapa.id]">
+  <mat-grid-tile *ngFor="let tapa of tapas$ | async" [routerLink]="['/tapa', tapa.id]">
+    <mat-card>
       <h3 mat-line> {{ tapa.name }} </h3>
       <img mat-list-avatar [src]="tapa?.pictureUrl" alt="Picture of {{tapa?.name}}" class="circle" width="200px">
     </mat-card>
-  </mat-grid-list>
+  </mat-grid-tile>
   <!-- </mat-list> -->
 </mat-grid-list>
 <a routerLink="/tapa/new" mat-fab title="Add a new tapa" class="tap-floating-button">
