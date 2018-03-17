@@ -1,3 +1,24 @@
-<p>
-  tapas-detail works!
-</p>
+<mat-card>
+  <mat-card-title-group>
+    <mat-card-title>{{tapa?.name}}</mat-card-title>
+    <img mat-card-lg-image [src]="tapa?.pictureUrl || ''">
+  </mat-card-title-group>
+  <mat-card-content>
+    <dl>
+      <dt>Price: </dt>
+      <dd>{{tapa?.price || '-'}} €</dd>
+      <dt>Rating: </dt>
+      <dd>{{tapa?.rating || '-'}}</dd>
+      <dt>Category: </dt>
+      <dd>{{tapa?.category || '-'}}</dd>
+      <dt>Ingredients: </dt>
+      <dd>{{tapa?.ingredients}}</dd>
+      <dt>Location: </dt>
+      <dd>{{tapa?.location || '-'}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions fxLayout fxLayoutAlign="center center">
+      <a mat-button [routerLink]="['/tapa', tapa?.id, 'edit']" title="Edit {{tapa?.name}}">Edit</a>
+      <a mat-button routerLink="/tapa/list"  title="Go back to list">Go Back</a>
+    </mat-card-actions>
+</mat-card>

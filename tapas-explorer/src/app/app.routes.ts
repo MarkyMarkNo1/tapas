@@ -14,7 +14,7 @@ export const APP_ROUTES: Routes = [
     path: '',
     component: OverviewComponent,
     children: [
-      { path: '', component: HomeComponent }, // , pathMatch: 'full'
+      { path: '', component: HomeComponent}, // , pathMatch: 'full'
       { path: 'tapa/new', component: TapasCreatorComponent },
       { path: 'tapa/list', component: TapasListComponent },
       { path: 'tapa/find', component: SearchTapasComponent },

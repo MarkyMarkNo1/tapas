@@ -1,9 +1,9 @@
 <mat-list>
-  <mat-list-item *ngFor="let tapa of tapas$ | async">
+  <a mat-list-item *ngFor="let tapa of tapas$ | async" [routerLink]="['/tapa', tapa.id]">
     <h3 mat-line> {{ tapa.name }} </h3>
-    <!-- <img mat-list-avatar [src]="tapa?.ca" alt="Picture of {{tapa?.name}}" class="circle"> -->
-  </mat-list-item>
+    <img mat-list-avatar [src]="tapa?.pictureUrl" alt="Picture of {{tapa?.name}}" class="circle">
+  </a>
 </mat-list>
-<a routerLink="/tapas/new" mat-fab title="Add a new tapa" class="trm-floating-button">
+<a routerLink="/tapa/new" mat-fab title="Add a new tapa" class="trm-floating-button">
   <mat-icon class="md-18">add</mat-icon>
 </a>

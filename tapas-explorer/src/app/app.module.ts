@@ -17,6 +17,9 @@ import { SurpriseMeComponent } from './components/surprise-me/surprise-me.compon
 import { HomeComponent } from './components/home/home.component';
 import { SearchTapasComponent } from './components/search-tapas/search-tapas.component';
 
+import { LeafletModule } from '@asymmetrik/angular2-leaflet';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +36,7 @@ import { SearchTapasComponent } from './components/search-tapas/search-tapas.com
   ],
   imports: [
     TapasMaterialsModule,
+    LeafletModule.forRoot(),
     BrowserModule, RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [TapasService],

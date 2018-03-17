@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TapasService } from '../../services/tapas.service';
+import { Tapa } from 'model/tapas';
+import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'tap-tapas-detail',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tapas-detail.component.css']
 })
 export class TapasDetailComponent implements OnInit {
+  tapa: Tapa;
 
-  constructor() { }
+  constructor(
+    private tapasService: TapasService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.tapasService
+      .getTapaByID(parseInt(this.route.snapshot.paramMap.get('id'), 10))
+      .subscribe(tapa => (this.tapa = tapa));
   }
-
 }

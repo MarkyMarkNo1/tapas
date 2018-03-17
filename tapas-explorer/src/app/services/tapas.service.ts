@@ -24,7 +24,7 @@ export class TapasService {
     );
   }
 
-  getTapasByID(id: number): Observable<Tapa> {
+  getTapaByID(id: number): Observable<Tapa> {
     return of(TAPAS_DATA[id]);
   }
 
