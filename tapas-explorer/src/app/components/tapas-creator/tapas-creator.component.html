@@ -1,17 +1,45 @@
 <div class="tap-tapas-creator">
   <!-- <form [formGroup]="form" (ngSubmit)="save(form.value)" novalidate> -->
-  <mat-card>
-    <mat-card-content>
 
-    </mat-card-content>
+  <form #form="ngForm" (ngSubmit)="save(form.value)">
+    <mat-card>
+      <mat-card-title-group>
+        <img mat-card-md-image alt="Placeholder image" src="assets\img\tapas.png">
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        <div fxLayout="column">
+          <mat-input-container fxFlex>
+            <input matInput placeholder="Name" name="name" ngModel>
+          </mat-input-container>
+          <mat-input-container fxFlex>
+            <input matInput placeholder="Category" name="category" ngModel>
+          </mat-input-container>
+          <mat-input-container fxFlex>
+            <input matInput placeholder="Picture URL" name="pictureUrl" ngModel>
+          </mat-input-container>
+          <mat-input-container fxFlex>
+            <input matInput placeholder="Price" name="price" ngModel>
+          </mat-input-container>
+          <mat-input-container fxFlex>
+            <input matInput placeholder="Ingredients" name="ingredients" ngModel>
+          </mat-input-container>
+          <mat-input-container fxFlex>
+            <input matInput placeholder="Rating" name="rating" ngModel>
+          </mat-input-container>
+          <mat-input-container fxFlex>
+            <input matInput placeholder="Location" name="location" ngModel>
+          </mat-input-container>
+        </div>
+      </mat-card-content>
 
-    <mat-card-actions fxLayout fxLayoutAlign="center center">
-      <button mat-button type="submit" [disabled]="!form.valid">Save</button>
-      <a routerLink="/tapa/list" mat-button title="Cancel creating tapa">Cancel</a>
-    </mat-card-actions>
-  </mat-card>
-  <!-- </form> -->
-
+      <mat-card-actions fxLayout fxLayoutAlign="center center">
+        <button mat-button type="submit" [disabled]="!form.valid">Save</button>
+        <a routerLink="/tapa/list" mat-button title="Cancel creating tapa">Cancel</a>
+      </mat-card-actions>
+    </mat-card>
+  </form>
 </div>
 
 <a mat-button routerLink="/tapa/list" title="Go back to list">Go Back</a>

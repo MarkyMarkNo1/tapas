@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormBuilder, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { LeafletModule } from '@asymmetrik/angular2-leaflet';
 
@@ -38,7 +40,10 @@ import { TapasService } from './services/tapas.service';
     MaterialModule,
     FormsModule,
     LeafletModule.forRoot(),
-    BrowserModule, RouterModule.forRoot(APP_ROUTES)
+    BrowserModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [TapasService, FormBuilder],
   bootstrap: [AppComponent]
