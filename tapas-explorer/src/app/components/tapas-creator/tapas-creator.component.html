@@ -15,7 +15,7 @@
           </mat-input-container>
           <label class="category-label">Category:</label>
           <mat-radio-group name="category" ngModel>
-            <mat-radio-button *ngFor="let variant of ['Meat', 'Vegetarian', 'Vegan']" [value]="variant">
+            <mat-radio-button *ngFor="let variant of categories" [value]="variant">
               {{variant}}
             </mat-radio-button>
           </mat-radio-group>
@@ -45,4 +45,4 @@
   </form>
 </div>
 
-<a mat-button routerLink="/tapa/list" title="Go back to list">Go Back</a>
+<!-- <a mat-button routerLink="/tapa/list" title="Go back to list">Go Back</a> -->
