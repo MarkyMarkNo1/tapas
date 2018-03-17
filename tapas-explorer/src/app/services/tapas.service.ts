@@ -20,7 +20,7 @@ export class TapasService {
 
   getTapas(): Observable<Array<Tapa>> {
     return of(TAPAS_DATA).pipe(
-      tap(v => console.log(v))
+      // tap(v => console.log(v))
     );
   }
 

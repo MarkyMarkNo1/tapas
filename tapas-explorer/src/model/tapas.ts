@@ -6,7 +6,7 @@ export interface Tapa {
   price?: number;
   ingredients?: string[];
   rating?: number;
-  location?: Location;
+  location?: number[];
 }
 
 export interface Location {

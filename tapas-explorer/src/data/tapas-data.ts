@@ -11,7 +11,7 @@ export const TAPAS_DATA: Array<Tapa> = [
     price: 2,
     ingredients: ['potatoes'],
     rating: 3,
-    location: { x_coordinate: 1, y_coordinate: 1}
+    location: [28.143611, -15.432281]
   },
   {
     id: 1,
@@ -22,7 +22,7 @@ export const TAPAS_DATA: Array<Tapa> = [
     price: 2.50,
     ingredients: ['sausage' , 'peppers'],
     rating: 4,
-    location: { x_coordinate: 1, y_coordinate: 1}
+    location: [28.141735, -15.434532]
   }
 ];
 
