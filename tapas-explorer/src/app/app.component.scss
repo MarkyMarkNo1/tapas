@@ -10,8 +10,7 @@
   }
 
   /deep/
-    tap-tapas-list,
-    tap-tapas-detail {
+    tap-tapas-list {
       mat-card {
         max-width: 500px;
         margin: 0 auto;
@@ -21,6 +20,18 @@
       }
     }
   }
+
+  /deep/
+  tap-tapas-detail {
+    mat-card {
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 2em;
+    img {
+      border-radius: 50%;
+    }
+  }
+}
 
   /deep/ mat-card {
     max-width: 500px;
