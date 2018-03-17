@@ -74,6 +74,10 @@
   }
 }
 
+/deep/ .trm-contacts-detail,
+/deep/ .trm-contacts-creator,
+/deep/ .trm-contacts-editor,
+/deep/ .trm-about,
 /deep/ .tap-tapas-creator {
   mat-card {
     max-width: 500px;
