@@ -57,7 +57,6 @@ export class TapasCreatorComponent implements OnInit, AfterViewInit {
     this.options.layers[0].addTo(this.map);
 
     this.map.on('click', e => {
-      console.log(e.latlng);
       if (this.marker) {
         this.map.removeLayer(this.marker);
       }
@@ -73,10 +72,5 @@ export class TapasCreatorComponent implements OnInit, AfterViewInit {
     this.tapasService
       .saveTapas(value)
       .subscribe(() => this.router.navigate(['/tapa/list']));
-  }
-
-  placeMarker(event: any) {
-    //this doesn do it
-    console.log('place marker');
   }
 }
