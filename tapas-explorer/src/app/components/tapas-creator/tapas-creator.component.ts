@@ -70,7 +70,7 @@ export class TapasCreatorComponent implements OnInit, AfterViewInit {
 
   save(value: Tapa) {
     this.tapasService
-      .saveTapas(value)
+      .saveTapas({...value, location: this.coordinates})
       .subscribe(() => this.router.navigate(['/tapa/list']));
   }
 }

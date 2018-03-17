@@ -35,7 +35,7 @@ export class TapasService {
   saveTapas(tapa: Tapa): Observable<Tapa> {
     tapa.id = TAPAS_DATA.length;
     TAPAS_DATA.push(tapa);
-    console.log(TAPAS_DATA);
+    console.log(tapa);
     return of(tapa);
   }
 
