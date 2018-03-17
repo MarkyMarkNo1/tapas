@@ -4,6 +4,10 @@
     <mat-card>
       <h3 mat-line> {{ tapa.name }} </h3>
       <img mat-list-avatar [src]="tapa?.pictureUrl" alt="Picture of {{tapa?.name}}" class="circle" width="200px">
+
+      <mat-card-content style="margin-top: 20px;">
+          <img src="/assets/img/{{tapa?.category}}-icon.png" alt="{{tapa?.category}}" />
+      </mat-card-content>
     </mat-card>
   </mat-grid-tile>
   <!-- </mat-list> -->

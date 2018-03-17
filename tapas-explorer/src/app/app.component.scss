@@ -5,16 +5,19 @@
     position: absolute;
     right: 2em;
     bottom: 2em;
-    // color: red;
     color: #fff;
   }
 
   /deep/
     tap-tapas-list {
+      mat-grid-tile{
+        height: 200px;
+      }
       mat-card {
-        max-width: 500px;
+        width: 200px;
         margin: 0 auto;
         margin-top: 2em;
+        text-align: center;
       img {
         border-radius: 50%;
       }
@@ -50,13 +53,6 @@
 :host {
   display: block;
 
-  /deep/ .trm-floating-button {
-    position: absolute;
-    right: 2em;
-    bottom: 2em;
-    color: #fff;
-  }
-
 }
 
 /deep/ mat-list {
@@ -78,10 +74,7 @@
   }
 }
 
-/deep/ .trm-contacts-detail,
-/deep/ .tap-tapas-creator,
-/deep/ .trm-contacts-editor,
-/deep/ .trm-about {
+/deep/ .tap-tapas-creator {
   mat-card {
     max-width: 500px;
     margin: 0 auto;
