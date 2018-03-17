@@ -6,6 +6,7 @@ import { TapasService } from 'app/services/tapas.service';
 import { map, tap } from 'rxjs/operators';
 import { Layer } from 'leaflet';
 import { icon, latLng, marker, polyline, tileLayer } from 'leaflet';
+// import { Dynamic } from 'leaflet.dynamic';
 
 @Component({
   selector: 'tap-map-overview',
@@ -21,19 +22,19 @@ export class MapOverviewComponent implements OnInit {
 
   tapas$: Tapa[];
 
-  // Marker for the top of Mt. Ranier
-  summit = marker([28.145611, -15.432281], {
-    icon: icon({
-      iconSize: [40, 40],
-      iconAnchor: [13, 41],
-      iconUrl: 'assets/img/tapas.1.png',
-      shadowUrl: 'leaflet/marker-shadow.png'
-    })
-  });
+  // // Marker for the top of Mt. Ranier
+  // summit = marker([28.145611, -15.432281], {
+  //   icon: icon({
+  //     iconSize: [40, 40],
+  //     iconAnchor: [13, 41],
+  //     iconUrl: 'assets/img/tapas_64x64.png',
+  //     shadowUrl: 'leaflet/marker-shadow.png'
+  //   })
+  // });
   tapaIcon = icon({
     iconSize: [40, 40],
     iconAnchor: [13, 41],
-    iconUrl: 'assets/img/tapas.1.png',
+    iconUrl: 'assets/img/tapas_64x64.png',
     shadowUrl: 'leaflet/marker-shadow.png'
   });
 
@@ -49,6 +50,8 @@ export class MapOverviewComponent implements OnInit {
   constructor(private tapasService: TapasService) {}
 
   ngOnInit() {
+    this.layers = new Array<Layer>();
+
     this.options = {
       layers: [
         L.tileLayer(
@@ -61,25 +64,27 @@ export class MapOverviewComponent implements OnInit {
             id: 'mapbox.streets',
             accessToken: this.accesstoken
           }
-        ), this.summit
+        )
       ],
       zoom: 15,
       center: L.latLng([28.145412, -15.430808])
     };
     this.optionsLoaded = true;
 
-    // const markertje = marker([28.143611, -15.432281]);
-    // this.layers = [marker([markertje])];
-
-    // let tapaMarker = L.marker([51.5, -0.09], {icon: this.tapaIcon});
-
-    // this.layers = [marker([])];
-
-    // const marker = L.marker([28.143611, -15.432281]).addTo(mymap);
+    // this.layers.push(
+    //   L.marker([28.145412, -15.430808], { icon: this.tapaIcon })
+    // );
 
     this.tapasService
       .getTapas()
-      .pipe(tap(console.log))
-      .subscribe();
+      .pipe(
+        tap(console.log)
+        // dynamically add it to some layer
+      )
+      .subscribe(tapas => {
+        tapas.forEach(element => {
+          this.layers.push(L.marker(element.location, { icon: this.tapaIcon }));
+        });
+      }); // this.layers.push(L.marker(tapas.location, { icon: this.tapaIcon })));
   }
 }
