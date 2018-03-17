@@ -53,8 +53,6 @@ export class MapOverviewComponent implements OnInit {
       center: L.latLng([28.145412, -15.430808])
     };
     this.optionsLoaded = true;
-    this.map = L.map('tapasMap');
-    console.log(this.map);
 
     this.tapasService
       .getTapas()
