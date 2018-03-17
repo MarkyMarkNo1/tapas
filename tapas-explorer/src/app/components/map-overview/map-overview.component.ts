@@ -17,35 +17,18 @@ export class MapOverviewComponent implements OnInit {
   options: any;
   layers: Layer[];
   optionsLoaded = false;
+  map: any;
 
   accesstoken = 'pk.eyJ1IjoibGVucCIsImEiOiJjamV2NTl2emowYnp0MzFvMTZlbzkwazJ0In0.34OPmJx4phT0bGNFe7f8HA';
 
   tapas$: Tapa[];
 
-  // // Marker for the top of Mt. Ranier
-  // summit = marker([28.145611, -15.432281], {
-  //   icon: icon({
-  //     iconSize: [40, 40],
-  //     iconAnchor: [13, 41],
-  //     iconUrl: 'assets/img/tapas_64x64.png',
-  //     shadowUrl: 'leaflet/marker-shadow.png'
-  //   })
-  // });
   tapaIcon = icon({
-    iconSize: [40, 40],
+    iconSize: [50, 50],
     iconAnchor: [13, 41],
     iconUrl: 'assets/img/tapas_64x64.png',
     shadowUrl: 'leaflet/marker-shadow.png'
   });
-
-  // tapaIcon = L.icon({
-  //   iconUrl: 'src\assets\img\tapas.1.png',
-  //   iconSize:     [38, 95], // size of the icon
-  //   shadowSize:   [50, 64], // size of the shadow
-  //   iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  //   shadowAnchor: [4, 62],  // the same for the shadow
-  //   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  // });
 
   constructor(private tapasService: TapasService) {}
 
@@ -70,10 +53,8 @@ export class MapOverviewComponent implements OnInit {
       center: L.latLng([28.145412, -15.430808])
     };
     this.optionsLoaded = true;
-
-    // this.layers.push(
-    //   L.marker([28.145412, -15.430808], { icon: this.tapaIcon })
-    // );
+    this.map = L.map('tapasMap');
+    console.log(this.map);
 
     this.tapasService
       .getTapas()
@@ -82,9 +63,17 @@ export class MapOverviewComponent implements OnInit {
         // dynamically add it to some layer
       )
       .subscribe(tapas => {
-        tapas.forEach(element => {
-          this.layers.push(L.marker(element.location, { icon: this.tapaIcon }));
+        tapas.forEach(tapa => {
+          this.layers.push(
+            L.marker(tapa.location, {
+              icon: this.tapaIcon
+            }).bindPopup(
+              `<p> ${tapa.name} </p><p><img src="${tapa.pictureUrl}"
+              style="height: auto; width: 90px;"/></p><a mat-button
+              [routerLink]=['/tapa', ${tapa.id} ]>Show details</a>`
+            )
+          );
         });
-      }); // this.layers.push(L.marker(tapas.location, { icon: this.tapaIcon })));
+      });
   }
 }

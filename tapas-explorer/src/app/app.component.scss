@@ -19,7 +19,7 @@
         margin-top: 2em;
         text-align: center;
       img {
-        border-radius: 50%;
+        // border-radius: 50%;
       }
     }
   }
@@ -41,7 +41,7 @@
     margin: 0 auto;
     margin-top: 2em;
     img {
-      border-radius: 50%;
+      // border-radius: 50%;
     }
 
   }
@@ -81,7 +81,7 @@
     margin-top: 2em;
 
     img {
-      border-radius: 50%;
+      // border-radius: 50%;
     }
   }
 
@@ -174,11 +174,6 @@
   .mat-radio-label {
     margin-top: 0.5em;
   }
-}
-
-/deep/ .trm-about mat-card img {
-  border-radius: 0;
-  max-height: 400px;
 }
 
 /deep/ .trm-search-container {
