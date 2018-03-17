@@ -13,9 +13,12 @@
           <mat-input-container fxFlex>
             <input matInput placeholder="Name" name="name" ngModel>
           </mat-input-container>
-          <mat-input-container fxFlex>
-            <input matInput placeholder="Category" name="category" ngModel>
-          </mat-input-container>
+          <label class="category-label">Category:</label>
+          <mat-radio-group name="category" ngModel>
+            <mat-radio-button *ngFor="let variant of ['Meat', 'Vegetarian', 'Vegan']" [value]="variant">
+              {{variant}}
+            </mat-radio-button>
+          </mat-radio-group>
           <mat-input-container fxFlex>
             <input matInput placeholder="Picture URL" name="pictureUrl" ngModel>
           </mat-input-container>
