@@ -32,8 +32,10 @@
             <input matInput placeholder="Rating" name="rating" ngModel>
           </mat-input-container>
           <mat-input-container fxFlex>
-            <input matInput placeholder="Location" name="location" ngModel>
+            <input matInput placeholder="Location" name="location" [ngModel]="coordinates" disabled="true">
           </mat-input-container>
+          <div style="height: 300px;" id="pointMap" (click)="placeMarker($event)">
+          </div>
         </div>
       </mat-card-content>
 
