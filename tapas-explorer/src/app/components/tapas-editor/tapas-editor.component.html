@@ -1,5 +1,41 @@
-<p>
-  tapas-editor works!
-</p>
-
-<a mat-button routerLink="/tapa/list"  title="Go back to list">Go Back</a>
+<div class="trm-contacts-editor">
+  <mat-card>
+    <mat-card-title-group class="fullBleed editing">
+      <img mat-card-md-image [src]="tapa?.pictureUrl || ''">
+      <mat-card-title>{{tapa?.name}}</mat-card-title>
+      <mat-card-subtitle>{{tapa?.category || 'No category'}}</mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      <div fxLayout="column">
+        <mat-input-container fxFlex>
+          <input matInput placeholder="Name" name="name" [(ngModel)]="tapa.name">
+        </mat-input-container>
+        <label class="category-label">Category:</label>
+        <mat-radio-group name="category" [(ngModel)]="tapa.category">
+          <mat-radio-button *ngFor="let variant of categories" [value]="variant">
+            {{variant}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <mat-input-container fxFlex>
+          <input matInput placeholder="Picture URL" name="pictureUrl" [(ngModel)]="tapa.pictureUrl">
+        </mat-input-container>
+        <mat-input-container fxFlex>
+          <input matInput placeholder="Price" name="price" [(ngModel)]="tapa.price">
+        </mat-input-container>
+        <mat-input-container fxFlex>
+          <input matInput placeholder="Ingredients" name="ingredients" [(ngModel)]="tapa.ingredients">
+        </mat-input-container>
+        <mat-input-container fxFlex>
+          <input matInput placeholder="rating" name="rating" [(ngModel)]="tapa.rating">
+        </mat-input-container>
+        <mat-input-container fxFlex>
+          <input matInput placeholder="Location" name="location" [(ngModel)]="tapa.location">
+        </mat-input-container>
+      </div>
+    </mat-card-content>
+    <mat-card-actions fxLayout fxLayoutAlign="center center">
+      <button mat-button type="button" (click)="save(tapa)" title="Save contact">Save</button>
+      <button mat-button type="button" (click)="cancel(tapa)" title="Cancel editing">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

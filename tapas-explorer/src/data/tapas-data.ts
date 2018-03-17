@@ -19,7 +19,7 @@ export const TAPAS_DATA: Array<Tapa> = [
     category: 'Meat',
     pictureUrl:
      'https://i0.wp.com/www.recetum.com/wp-content/uploads/2014/01/Pinchos-de-morcilla-y-pimientos.png?resize=671%2C503',
-    price: 2.50,
+    price: 2,
     ingredients: ['sausage' , 'peppers'],
     rating: 4,
     location: [28.141735, -15.434532]

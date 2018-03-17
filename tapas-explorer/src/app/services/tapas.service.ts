@@ -37,4 +37,9 @@ export class TapasService {
     console.log(TAPAS_DATA);
     return of(tapa);
   }
+
+  updateTapa(tapa: Tapa): Observable<Tapa> {
+    return of(TAPAS_DATA[tapa.id] = tapa);
+  }
+
 }
