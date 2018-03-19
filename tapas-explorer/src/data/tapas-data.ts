@@ -30,8 +30,9 @@ export const TAPAS_DATA: Array<Tapa> = [
     category: 'Vegetarian',
     pictureUrl:
       'https://t2.rg.ltmcdn.com/es/images/2/1/3/img_chipirones_a_la_plancha_tiernos_59312_600.jpg',
-    price: '5',
-    ingredients: '',
-    location: [28.147209179439148,-15.433044433593752]
+    price: 5,
+    ingredients: [''],
+    rating: 5,
+    location: [28.147209179439148, -15.433044433593752]
   }
 ];
